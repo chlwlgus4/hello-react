@@ -3,6 +3,7 @@ import MyComponent from './MyComponent';
 import './App.css';
 import Counter from "./Counter";
 import Say from "./Say";
+import EventPractice from "./EventPractice";
 
 function App() {
     const name = '리액트';
@@ -20,6 +21,7 @@ function App() {
             <MyComponent name={'React'} favoriteNumber={1}>리액트</MyComponent>
             <Counter/>
             <Say/>
+            <EventPractice />
         </Fragment>
     );
 }
