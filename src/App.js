@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Fragment} from 'react';
+import MyComponent from './MyComponent';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const name = '리액트';
+    const style = {
+      backgroundColor: 'black',
+      color: 'aqua',
+      fontSize:'48px',
+      fontWeight:'bold',
+      padding:16
+    };
+    return (
+        <Fragment>
+            <div style={style}>{name}</div>
+            <div className="react">{name}</div>
+            <MyComponent name={'React'} favoriteNumber={1}>리액트</MyComponent>
+        </Fragment>
+    );
 }
 
 export default App;
