@@ -7,8 +7,15 @@ import EventPractice from "./EventPractice";
 import ValidationSample from "./ValidationSample";
 import ScrollBox from './ScrollBox';
 import IterationSample from "./IterationSample";
+import LifeCycleSample from "./LifeCycleSample";
+import ErrorBoundary from "./ErrorBoundary";
 
 // function App() {
+
+function getRandomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
 class App extends Component {
     // const name = '리액트';
     // const style = {
@@ -18,6 +25,16 @@ class App extends Component {
     //     fontWeight     : 'bold',
     //     padding        : 16
     // };
+    state = {
+        color: '#000000'
+    }
+
+    handleClick = () => {
+        this.setState({
+            color: getRandomColor()
+        })
+    }
+
     render() {
         const name = '리액트';
         const style = {
@@ -33,7 +50,9 @@ class App extends Component {
                 <div className="react">{name}</div>
                 <MyComponent name={'React'}
                              favoriteNumber={1}
-                             ref={(ref) => {this.myComponent = ref}}
+                             ref={(ref) => {
+                                 this.myComponent = ref
+                             }}
                 >리액트</MyComponent>
                 <Counter/>
                 <Say/>
@@ -42,6 +61,10 @@ class App extends Component {
                 <ScrollBox ref={(ref) => this.scrollBox = ref}/>
                 <button onClick={() => this.scrollBox.scrollToBottom()}>맨 밑으로</button>
                 <IterationSample/>
+                <button onClick={this.handleClick}>랜덤 색상</button>
+                <ErrorBoundary>
+                    <LifeCycleSample color={this.state.color}/>
+                </ErrorBoundary>
             </Fragment>
         );
     }
