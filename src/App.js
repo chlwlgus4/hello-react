@@ -19,10 +19,18 @@ class App extends Component {
     //     padding        : 16
     // };
     render() {
+        const name = '리액트';
+        const style = {
+            backgroundColor: 'black',
+            color          : 'aqua',
+            fontSize       : '48px',
+            fontWeight     : 'bold',
+            padding        : 16
+        };
         return (
             <Fragment>
-                {/*<div style={style}>{name}</div>*/}
-                {/*<div className="react">{name}</div>*/}
+                <div style={style}>{name}</div>
+                <div className="react">{name}</div>
                 <MyComponent name={'React'}
                              favoriteNumber={1}
                              ref={(ref) => {this.myComponent = ref}}
