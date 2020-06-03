@@ -9,6 +9,7 @@ import ScrollBox from './ScrollBox';
 import IterationSample from "./IterationSample";
 import LifeCycleSample from "./LifeCycleSample";
 import ErrorBoundary from "./ErrorBoundary";
+import Info from "./Info";
 
 // function App() {
 
@@ -65,6 +66,7 @@ class App extends Component {
                 <ErrorBoundary>
                     <LifeCycleSample color={this.state.color}/>
                 </ErrorBoundary>
+                <Info />
             </Fragment>
         );
     }
