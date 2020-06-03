@@ -14,9 +14,29 @@ const Info = () => {
     // });
 
     // 마운트 시
+    // useEffect(() => {
+    //     console.log('마운트될 때만 실행됩니다.');
+    // }, []);
+    // const onChangeName = e => {
+    //     setName(e.target.value);
+    // };
+
+    // 특정 값이 업데이트될 때
+    // useEffect(() => {
+    //     console.log(name);
+    // }, [name]);
+    // const onChangeName = e => {
+    //     setName(e.target.value);
+    // };
+
     useEffect(() => {
-        console.log('마운트될 때만 실행됩니다.');
-    }, []);
+        console.log('effect');
+        console.log(name);
+        return () => {
+            console.log('cleanup');
+            console.log(name);
+        }
+    });
     const onChangeName = e => {
         setName(e.target.value);
     };
